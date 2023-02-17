@@ -1,0 +1,122 @@
+.submenu {
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+  -webkit-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  transform-origin: 0 0;
+  background: #d00909;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  transition: all .3s ease-in-out;
+  z-index: 99;
+}
+
+.header {
+  border-bottom: 1px solid #E0E0E0;
+  height: 70px;
+  position: relative;
+
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    background: #fff;
+    z-index: 999;
+
+    &-logo {
+      height: 22px;
+    }
+
+    &-nav {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      font-size: 14px;
+      .dropdown {
+        float: left;
+        overflow: hidden;
+        &__menu {
+          display: none;
+          position: absolute;
+          background-color: #ffffff;
+          width: 100%;
+          top: 69px;
+          left: 0;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          z-index: 1;
+          transition: all .2s ease-in-out;
+          padding: 24px 0;
+          &-container {
+            display: flex;
+            margin: 0 auto;
+            padding: 0 var(--container-offset);
+            max-width: var(--container-width);
+            height: 100%;
+            width: 100%;
+            font-size: 14px;
+          }
+          &-main {
+            font-weight: 600;
+            margin-right: 100px;
+          }
+          &-other {
+            margin-right: 100px;
+          }
+          &-item:not(:last-child) {
+            margin-bottom: 24px;
+          }
+        }
+        &__menu:hover {
+          display: flex;
+          width: 100%;
+        }
+      }
+      .dropdown:hover .dropdown__menu {
+        display: flex;
+        width: 100%;
+        animation: shows .5s;
+      }
+
+
+      @keyframes shows {
+
+        from {
+
+          opacity: 0;
+
+        }
+
+        to {
+
+          opacity: 1;
+
+        }
+
+      }
+
+      &-item {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        border-bottom: 2px solid #fff;
+      }
+
+      &-item:not(:last-child) {
+        margin-right: 40px;
+      }
+
+      &-item:hover {
+        border-bottom: 2px solid var(--main-color);
+      }
+
+    }
+  }
+}
+
+
+
